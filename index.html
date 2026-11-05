@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Droguería Las Acacias — Salud y bienestar con confianza</title>
+  <meta name="description" content="Droguería Las Acacias en Armenia, Quindío. Medicamentos, cuidado personal y asesoría farmacéutica. Atención cercana y profesional. Contáctanos por WhatsApp.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons (professional, not emojis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --royal-blue: #1E3A8A;      /* Azul Rey */
+      --orange: #EA580C;          /* Naranja */
+      --gray-blue: #475569;       /* Azul grisáceo */
+      --white: #FFFFFF;
+      --off-white: #F8FAFC;
+      --light-gray: #E2E8F0;
+      --text-dark: #1E293B;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+      --border-radius: 16px;
+      --transition: all 0.25s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--white);
+      color: var(--text-dark);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--orange);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: 60px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+      letter-spacing: 0.3px;
+    }
+
+    .btn:hover {
+      background-color: #c2410c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(234, 88, 12, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--royal-blue);
+      border: 2px solid var(--royal-blue);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: var(--royal-blue);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(30, 58, 138, 0.2);
+    }
+
+    /* ---------- HEADER / NAV ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+      padding: 14px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--royal-blue);
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .nav-links a:not(.nav-cta) {
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--gray-blue);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:not(.nav-cta)::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--orange);
+      transition: var(--transition);
+    }
+
+    .nav-links a:not(.nav-cta):hover {
+      color: var(--royal-blue);
+    }
+
+    .nav-links a:not(.nav-cta):hover::after {
+      width: 100%;
+    }
+
+    /* ============================================
+       BOTÓN "ESCRÍBENOS" MEJORADO — Top Right
+       ============================================ */
+    .nav-cta {
+      /* Estructura y alineación */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      /* Tipografía */
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.4px;
+      text-transform: none;
+      white-space: nowrap;
+
+      /* Dimensiones y forma */
+      padding: 12px 26px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+
+      /* Colores base — gradiente sutil con azul rey */
+      background: linear-gradient(135deg, var(--royal-blue) 0%, #2B4DB0 100%);
+      color: var(--white);
+
+      /* Sombra base y transición */
+      box-shadow: 0 6px 18px rgba(30, 58, 138, 0.30),
+                  0 2px 6px rgba(30, 58, 138, 0.15);
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      text-decoration: none;
+    }
+
+    /* Icono de WhatsApp dentro del botón */
+    .nav-cta i {
+      font-size: 1.15rem;
+      color: var(--white);
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Texto dentro del botón */
+    .nav-cta span {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Efecto de brillo deslizante al pasar el cursor */
+    .nav-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: left 0.55s ease;
+      z-index: 1;
+    }
+
+    /* Efecto de resplandor naranja en la parte inferior */
+    .nav-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(234, 88, 12, 0.45) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Hover: elevación, cambio de sombra, escala del icono y brillo */
+    .nav-cta:hover {
+      transform: translateY(-3px) scale(1.02);
+      background: linear-gradient(135deg, #1A327A 0%, #2545A0 100%);
+      box-shadow: 0 12px 28px rgba(30, 58, 138, 0.40),
+                  0 4px 12px rgba(234, 88, 12, 0.20);
+      color: var(--white);
+    }
+
+    .nav-cta:hover::before {
+      left: 100%;
+    }
+
+    .nav-cta:hover::after {
+      opacity: 1;
+    }
+
+    .nav-cta:hover i {
+      transform: scale(1.15) rotate(-5deg);
+    }
+
+    /* Estado activo (clic) */
+    .nav-cta:active {
+      transform: translateY(-1px) scale(0.99);
+      box-shadow: 0 6px 14px rgba(30, 58, 138, 0.35);
+    }
+
+    /* Foco accesible */
+    .nav-cta:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 3px;
+    }
+
+    /* ---------- MENÚ MÓVIL ---------- */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: var(--royal-blue);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 60px 0 80px;
+      background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 70%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(234, 88, 12, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.4rem;
+      color: var(--royal-blue);
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+
+    .hero-content h1 span {
+      color: var(--orange);
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: var(--gray-blue);
+      margin-bottom: 32px;
+      max-width: 90%;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .hero-image:hover img {
+      transform: scale(1.02);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background-color: rgba(234, 88, 12, 0.1);
+      color: var(--orange);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 8px 18px;
+      border-radius: 40px;
+      margin-bottom: 20px;
+      letter-spacing: 0.4px;
+    }
+
+    /* ---------- SECCIONES GENERALES ---------- */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--royal-blue);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--gray-blue);
+      max-width: 620px;
+      margin: 0 auto 56px;
+    }
+
+    /* ---------- SERVICIOS ---------- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--light-gray);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(30, 58, 138, 0.2);
+    }
+
+    .service-icon {
+      font-size: 2.6rem;
+      color: var(--orange);
+      margin-bottom: 20px;
+      display: inline-block;
+      background: rgba(234, 88, 12, 0.08);
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
+      border-radius: 50%;
+      text-align: center;
+    }
+
+    .service-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--royal-blue);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--gray-blue);
+      font-size: 1rem;
+    }
+
+    /* ---------- DIFERENCIADORES ---------- */
+    .features {
+      background-color: var(--off-white);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+    }
+
+    .feature-item {
+      text-align: center;
+    }
+
+    .feature-item i {
+      font-size: 2.2rem;
+      color: var(--royal-blue);
+      margin-bottom: 18px;
+      background: var(--white);
+      width: 64px;
+      height: 64px;
+      line-height: 64px;
+      border-radius: 50%;
+      box-shadow: var(--shadow-sm);
+      display: inline-block;
+    }
+
+    .feature-item h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--royal-blue);
+      margin-bottom: 8px;
+    }
+
+    .feature-item p {
+      color: var(--gray-blue);
+      font-size: 0.98rem;
+    }
+
+    /* ---------- GALERÍA ---------- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      height: 220px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    /* ---------- TESTIMONIOS / CONFIANZA ---------- */
+    .testimonials {
+      background-color: var(--white);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background: var(--off-white);
+      border-radius: var(--border-radius);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      border-left: 6px solid var(--orange);
+      transition: var(--transition);
+    }
+
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .testimonial-card .quote {
+      font-size: 1rem;
+      color: var(--gray-blue);
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      background-color: var(--royal-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .author-info strong {
+      display: block;
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    .author-info span {
+      font-size: 0.85rem;
+      color: var(--gray-blue);
+    }
+
+    .disclaimer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-top: 24px;
+    }
+
+    /* ---------- PROCESO ---------- */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      counter-reset: step;
+    }
+
+    .step {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 36px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--light-gray);
+      position: relative;
+      counter-increment: step;
+    }
+
+    .step::before {
+      content: counter(step);
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background: var(--orange);
+      color: white;
+      font-weight: 700;
+      font-size: 1.3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(234, 88, 12, 0.3);
+    }
+
+    .step h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--royal-blue);
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--gray-blue);
+      font-size: 0.95rem;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq {
+      background-color: var(--off-white);
+    }
+
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      margin-bottom: 16px;
+      padding: 0 24px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 0;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--royal-blue);
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-question::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-question i {
+      color: var(--orange);
+      transition: var(--transition);
+    }
+
+    details[open] .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 0 22px;
+      color: var(--gray-blue);
+      line-height: 1.7;
+      border-top: 1px solid var(--light-gray);
+      margin-top: 4px;
+      padding-top: 16px;
+    }
+
+    /* ---------- CONTACTO ---------- */
+    .contact {
+      background: linear-gradient(145deg, var(--white) 0%, #f4f7fc 100%);
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-size: 2.4rem;
+      color: var(--royal-blue);
+      margin-bottom: 16px;
+    }
+
+    .contact-info > p {
+      color: var(--gray-blue);
+      margin-bottom: 32px;
+      font-size: 1.1rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .contact-detail i {
+      font-size: 1.4rem;
+      color: var(--orange);
+      width: 24px;
+      text-align: center;
+    }
+
+    .contact-detail span {
+      font-size: 1.05rem;
+      color: var(--text-dark);
+    }
+
+    .contact-detail strong {
+      font-weight: 700;
+      color: var(--royal-blue);
+    }
+
+    .whatsapp-direct {
+      margin-top: 36px;
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+      padding: 16px 36px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+      transition: var(--transition);
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1da851;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.4);
+    }
+
+    .contact-note {
+      background: var(--white);
+      padding: 24px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--royal-blue);
+    }
+
+    .contact-note p {
+      font-size: 0.95rem;
+      color: var(--gray-blue);
+    }
+
+    .contact-note code {
+      background: var(--light-gray);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: var(--royal-blue);
+      font-weight: 600;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background-color: var(--royal-blue);
+      color: rgba(255, 255, 255, 0.85);
+      padding: 60px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand .logo {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand .logo span {
+      color: var(--orange);
+    }
+
+    .footer-brand p {
+      max-width: 320px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-links h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        gap: 40px;
+      }
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        gap: 20px;
+        padding: 28px 24px;
+        box-shadow: var(--shadow-md);
+        border-radius: 0 0 24px 24px;
+        z-index: 99;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      /* Botón en menú móvil ocupa el ancho adecuado */
+      .nav-links .nav-cta {
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .hero {
+        padding: 40px 0 60px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      /* Ajuste del botón en móvil muy pequeño */
+      .nav-cta {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">Droguería <span>Las Acacias</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#diferenciadores">Por qué elegirnos</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+        <!-- BOTÓN MEJORADO "ESCRÍBENOS" -->
+        <a href="https://wa.me/573216217994?text=Hola%2C%20quiero%20hacer%20una%20consulta%20a%20Droguer%C3%ADa%20Las%20Acacias" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="nav-cta"
+           aria-label="Escríbenos por WhatsApp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <span>Escríbenos</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-badge"><i class="fas fa-map-pin"></i> Armenia, Quindío</span>
+          <h1>Tu droguería de confianza en <span>Las Acacias</span></h1>
+          <p>Medicamentos, cuidado personal y asesoría farmacéutica con la atención cercana que tu familia merece. Encuentra lo que necesitas, sin complicaciones.</p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/573216217994?text=Hola%2C%20necesito%20asesor%C3%ADa%20sobre%20un%20medicamento" target="_blank" rel="noopener noreferrer" class="btn"><i class="fab fa-whatsapp"></i> Consultar por WhatsApp</a>
+            <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?q=80&w=1200&auto=format&fit=crop" alt="Farmacéutico profesional atendiendo en droguería moderna" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SERVICIOS ========== -->
+    <section id="servicios" class="container">
+      <h2 class="section-title">Todo lo que necesitas, en un solo lugar</h2>
+      <p class="section-subtitle">Más que una droguería: un espacio pensado para cuidar tu salud y la de los tuyos con productos de calidad y orientación profesional.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-pills"></i></div>
+          <h3>Medicamentos y fórmulas</h3>
+          <p>Amplio surtido de medicamentos de marca y genéricos, con receta o sin ella. Te ayudamos a encontrar lo que necesitas.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+          <h3>Cuidado personal y dermocosmética</h3>
+          <p>Productos para el cuidado de la piel, higiene personal y bienestar diario de las mejores marcas.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-user-md"></i></div>
+          <h3>Asesoría farmacéutica</h3>
+          <p>Resolvemos tus dudas sobre medicamentos, interacciones y uso adecuado. Atención personalizada y profesional.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-baby"></i></div>
+          <h3>Maternidad y bebés</h3>
+          <p>Todo para el cuidado del bebé: pañales, cremas, fórmulas infantiles y artículos de maternidad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DIFERENCIADORES ========== -->
+    <section id="diferenciadores" class="features">
+      <div class="container">
+        <h2 class="section-title">¿Por qué elegir Droguería Las Acacias?</h2>
+        <p class="section-subtitle">La diferencia está en el trato, la disponibilidad y el compromiso con tu bienestar.</p>
+        <div class="features-grid">
+          <div class="feature-item">
+            <i class="fas fa-clock"></i>
+            <h3>Horarios amplios</h3>
+            <p>Abiertos de lunes a sábado, con horario extendido para que puedas venir cuando lo necesites.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-truck"></i>
+            <h3>Domicilios en el barrio</h3>
+            <p>Llevamos tus medicamentos hasta la puerta de tu casa dentro del sector de Las Acacias y alrededores.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-hand-holding-heart"></i>
+            <h3>Atención personalizada</h3>
+            <p>Un equipo capacitado que te escucha y te orienta, no solo despacha productos.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <h3>Productos originales</h3>
+            <p>Trabajamos con proveedores autorizados y garantizamos la procedencia de cada producto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GALERÍA ========== -->
+    <section id="galeria" class="container">
+      <h2 class="section-title">Conoce nuestro espacio</h2>
+      <p class="section-subtitle">Un ambiente limpio, ordenado y profesional para que tu experiencia de compra sea agradable.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?q=80&w=800&auto=format&fit=crop" alt="Estanterías de medicamentos organizadas" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=800&auto=format&fit=crop" alt="Mostrador de atención en droguería" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?q=80&w=800&auto=format&fit=crop" alt="Productos de cuidado personal y dermocosmética" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?q=80&w=800&auto=format&fit=crop" alt="Farmacéutico asesorando a cliente" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIOS / CONFIANZA ========== -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <p class="section-subtitle">Testimonios de ejemplo que reflejan la experiencia que queremos brindar.</p>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p class="quote">«Siempre encuentro lo que necesito y la atención es muy amable. Me ayudaron a entender cómo tomar mi medicamento.»</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">LM</div>
+              <div class="author-info">
+                <strong>Laura Martínez</strong>
+                <span>Vecina de Las Acacias</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="quote">«Pedí un domicilio y llegó rapidísimo. El servicio es confiable y los precios son justos. Recomendados.»</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JR</div>
+              <div class="author-info">
+                <strong>Jorge Ramírez</strong>
+                <span>Cliente frecuente</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="quote">«Me gusta que siempre tienen lo que busco y que el personal está capacitado para orientar. Se nota la diferencia.»</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">CP</div>
+              <div class="author-info">
+                <strong>Carolina Peña</strong>
+                <span>Residente del sector</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="disclaimer">* Testimonios ficticios con fines demostrativos. Los nombres y experiencias son ejemplos de marketing.</p>
+      </div>
+    </section>
+
+    <!-- ========== PROCESO ========== -->
+    <section class="container">
+      <h2 class="section-title">Así de fácil es contactarnos</h2>
+      <p class="section-subtitle">Sin filas innecesarias ni procesos complicados. Estamos para ayudarte.</p>
+      <div class="process-steps">
+        <div class="step">
+          <h3>Escríbenos por WhatsApp</h3>
+          <p>Cuéntanos qué necesitas: un medicamento, una consulta o un domicilio. Te respondemos rápido.</p>
+        </div>
+        <div class="step">
+          <h3>Confirmamos disponibilidad</h3>
+          <p>Verificamos existencias y te informamos el precio y las opciones de pago.</p>
+        </div>
+        <div class="step">
+          <h3>Recoge o recibe en casa</h3>
+          <p>Pasa por la droguería o solicita tu domicilio. ¡Así de simple!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="faq">
+      <div class="container">
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <p class="section-subtitle">Resolvemos las dudas más comunes de nuestros clientes.</p>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">¿Hacen domicilios? <i class="fas fa-chevron-down"></i></summary>
+            <div class="faq-answer">Sí, realizamos domicilios gratuitos dentro del barrio Las Acacias y sectores cercanos. Para pedidos fuera del perímetro, consulta por WhatsApp.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">¿Qué métodos de pago aceptan? <i class="fas fa-chevron-down"></i></summary>
+            <div class="faq-answer">Aceptamos efectivo, tarjetas débito y crédito, y transferencias por Nequi o Bancolombia. Pregunta por otros medios disponibles.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">¿Puedo consultar por un medicamento sin ir? <i class="fas fa-chevron-down"></i></summary>
+            <div class="faq-answer">Claro. Escríbenos por WhatsApp, indícanos el nombre del medicamento y te confirmamos disponibilidad, precio y presentación.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">¿Tienen asesoría farmacéutica? <i class="fas fa-chevron-down"></i></summary>
+            <div class="faq-answer">Sí, contamos con personal capacitado para orientarte sobre el uso adecuado de los medicamentos, interacciones y recomendaciones generales. No sustituimos la consulta médica.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">¿Cuál es el horario de atención? <i class="fas fa-chevron-down"></i></summary>
+            <div class="faq-answer">Lunes a viernes de 8:00 a.m. a 8:00 p.m., sábados de 9:00 a.m. a 6:00 p.m. Domingos y festivos no hay atención presencial, pero puedes escribirnos por WhatsApp.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACTO ========== -->
+    <section id="contacto" class="contact">
+      <div class="container contact-wrapper">
+        <div class="contact-info">
+          <h2>Estamos aquí para ti</h2>
+          <p>Visítanos o contáctanos por WhatsApp. Resolvemos tus dudas y te ayudamos con lo que necesites.</p>
+          <div class="contact-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <span><strong>Dirección:</strong> Manzana 7 Casa 3, Barrio Las Acacias, Armenia, Quindío.</span>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-phone-alt"></i>
+            <span><strong>WhatsApp:</strong> +57 321 6217994</span>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-clock"></i>
+            <span><strong>Horario:</strong> Lun-Vie 8:00 a.m. - 8:00 p.m. | Sáb 9:00 a.m. - 6:00 p.m.</span>
+          </div>
+          <div class="whatsapp-direct">
+            <a href="https://wa.me/573216217994?text=Hola%2C%20quiero%20hacer%20una%20consulta%20a%20Droguer%C3%ADa%20Las%20Acacias" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+              <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="contact-note">
+          <p><i class="fas fa-info-circle" style="color: var(--orange); margin-right: 8px;"></i> <strong>Nota para el desarrollador:</strong> El número de WhatsApp es ficticio. Reemplaza <code>573216217994</code> por el número real del negocio antes de publicar.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">Droguería <span>Las Acacias</span></div>
+          <p>Tu salud y bienestar, nuestra prioridad. Medicamentos, cuidado personal y asesoría profesional en Armenia, Quindío.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#diferenciadores">Por qué elegirnos</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Manzana 7 Casa 3, Barrio Las Acacias</a></li>
+            <li><a href="https://wa.me/573216217994" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" style="margin-right: 8px;"></i> +57 321 6217994</a></li>
+            <li><a href="#"><i class="fas fa-clock" style="margin-right: 8px;"></i> Lun-Vie 8am-8pm, Sáb 9am-6pm</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Droguería Las Acacias. Demo creada por Simple Web — Todos los derechos reservados.</p>
+        <p style="margin-top: 8px; font-size: 0.8rem;">Los datos de contacto son de demostración. Personalízalos antes de publicar.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT (menú móvil) ========== -->
+  <script>
+    (function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+          // Cambiar icono
+          const icon = menuToggle.querySelector('i');
+          if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
